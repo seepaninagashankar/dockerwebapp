@@ -1,25 +1,25 @@
----
 version: "3.8"
-services:
- devopsdb:
-   image: nagashankar8916/1project:dbimg
-   ports:
-     - "3306:3306"
-    deploy:
-     replicas: 3 
-    networks:
-     - app_network
 
- application:
-   image: nagashankar8916/1project:appimg
-   ports:
-     - "1111:8080"
-   deploy:
-    replicas: 3 
-   depends_on:
-     - "devopsdb"
-    netwroks:
+services:
+  devopsdb:
+    image: nagashankar8916/1project:dbimg
+    ports:
+      - "3306:3306"
+    deploy:
+      replicas: 3
+    networks:
+      - app_network
+
+  application:
+    image: nagashankar8916/1project:appimg
+    ports:
+      - "1111:8080"
+    deploy:
+      replicas: 3
+    depends_on:
+      - devopsdb
+    networks:
       - app_network
 networks:
- app_network:
-   driver: overlay
+  app_network:
+    driver: overlay
