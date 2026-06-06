@@ -5,7 +5,8 @@ services:
    image: nagashankar8916/1project:dbim
    ports:
      - "3306:3306"
-    replicas: 3 
+    deploy:
+     replicas: 3 
     networks:
      - app_network
 
@@ -13,6 +14,7 @@ services:
    image: nagashankar8916/1project:appimg
    ports:
      - "1111:8080"
+   deploy:
     replicas: 3 
    depends_on:
      - "devopsdb"
