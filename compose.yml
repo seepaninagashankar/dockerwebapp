@@ -1,8 +1,8 @@
 ---
-version: "3"
+version: "3.8"
 services:
  devopsdb:
-   image: nagashankar8916/1project:dbim
+   image: nagashankar8916/1project:dbimg
    ports:
      - "3306:3306"
     deploy:
