@@ -5,8 +5,6 @@ services:
     image: nagashankar8916/1project:dbimg
     ports:
       - "3306:3306"
-    deploy:
-      replicas: 3
     networks:
       - app_network
 
