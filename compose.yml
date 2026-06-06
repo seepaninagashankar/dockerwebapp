@@ -2,13 +2,22 @@
 version: "3"
 services:
  devopsdb:
-   image: shaikmustafa/harikanew:dbimage
+   image: nagashankar8916/1project:dbim
    ports:
      - "3306:3306"
+    replicas: 3 
+    networks:
+     - app_network
 
  application:
-   image: shaikmustafa/harikanew:appimage
+   image: nagashankar8916/1project:appimg
    ports:
      - "1111:8080"
+    replicas: 3 
    depends_on:
      - "devopsdb"
+    netwroks:
+      - app_network
+networks:
+ app_network:
+   driver: overlay
