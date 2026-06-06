@@ -6,7 +6,7 @@ services:
     ports:
       - "3306:3306"
     deploy:
-      replicas: 
+      replicas: 1
     networks:
       - app_network
 
